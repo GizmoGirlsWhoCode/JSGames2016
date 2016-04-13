@@ -1,0 +1,14 @@
+new Rect(300, 80, 10, 460).fill("black").addTo(stage);
+new Rect(500, 80, 10, 460).fill("black").addTo(stage);
+new Rect(150, 200, 500, 10).fill("black").addTo(stage);
+new Rect(150, 400, 500, 10).fill("black").addTo(stage);
+
+var heart = new Group().addTo(stage);
+new Circle(390, 600, 25).fill("red").addTo(heart);
+new Circle(430, 600, 25).fill("red").addTo(heart);
+new Star(410, 620, 35, 4).fill("red").addTo(heart);
+
+var awl = new Group().addTo(stage);
+new Ellipse(580, 600, 70, 5).fill("grey").addTo(awl);
+new Circle(500, 600, 25).fill('brown').addTo(awl);
+new Circle(525, 600, 20).fill('brown').addTo(awl);
