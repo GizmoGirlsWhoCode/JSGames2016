@@ -1,0 +1,23 @@
+new Bitmap('https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Wolf_%28PSF%29.png/128px-Wolf_%28PSF%29.png').on('load', function() {
+  this.addTo(stage);
+});
+
+new Ellipse(150, 50, 20, 20)
+  .addTo(stage)
+  .attr('fillColor', 'brown')
+  .animate('1s', {
+    fillColor: 'tan'
+})
+  .animate('1s', {
+    fillColor: 'brown'
+});
+  
+ myDisplayObject.animate('650ms', {
+  x: 100,
+  y: 900
+}, {
+  easing: 'bounceIn',
+  delay: '200ms'
+}); 
+new Background(0); 
+  
