@@ -1,3 +1,5 @@
-This is a file for notes.
+Taking code from Kahn Academy and trying to put it into an HTML page does not
+seem to be working well. As far as I can tell, the code there is a mixture of
+Java and JavaScript. If you can keep to one or the other, it's OK, but they seem
+to let you mix both. I don't know how they are doing it.
 
-Added 4/19 - demo
