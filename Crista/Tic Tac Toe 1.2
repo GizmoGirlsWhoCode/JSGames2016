@@ -1,0 +1,100 @@
+var text = new Text('Pick either the heart or the awl:').addTo(stage);
+text.attr({
+  x: 150,
+  y: 600,
+  textFillColor: 'black',
+  fontSize: '30px'
+});
+
+//tic tac toe board
+new Rect(300, 80, 10, 460).fill("black").addTo(stage);
+new Rect(500, 80, 10, 460).fill("black").addTo(stage);
+new Rect(150, 200, 500, 10).fill("black").addTo(stage);
+new Rect(150, 400, 500, 10).fill("black").addTo(stage);
+
+//heart piece
+var heart = new Group().addTo(stage);
+new Circle(290, 690, 25).fill("red").addTo(heart);
+new Circle(330, 690, 25).fill("red").addTo(heart);
+new Star(310, 710, 35, 4).fill("red").addTo(heart);
+
+//awl piece
+var awl = new Group().addTo(stage);
+new Ellipse(550, 700, 70, 5).fill("grey").addTo(awl);
+new Circle(470, 700, 25).fill('brown').addTo(awl);
+new Circle(495, 700, 20).fill('brown').addTo(awl);
+
+//blank spaces within board
+var r1s1 = new Rect(150, 80, 150, 120).fill("white").addTo(stage);
+var r1s2 = new Rect(310, 80, 190, 120).fill("white").addTo(stage);
+var r1s3 = new Rect(510, 80, 140, 120).fill("white").addTo(stage);
+var r2s1 = new Rect(150, 210, 150, 190).fill("white").addTo(stage);
+var r2s1 = new Rect(310, 210, 190, 190).fill("white").addTo(stage);
+var r2s2 = new Rect(510, 210, 140, 190).fill("white").addTo(stage);
+var r2s3 = new Rect(150, 410, 150, 130).fill("white").addTo(stage);
+var r3s3 = new Rect(310, 410, 190, 130).fill("white").addTo(stage);
+var r3s3 = new Rect(510, 410, 140, 130).fill("white").addTo(stage);
+
+//playing as the heart
+heart.on('click', function(){
+  stage.removeChild(awl);
+  stage.removeChild(text);
+  text = new Text('Place your heart into any space').addTo(stage);
+  text.attr({
+    x: 150,
+    y: 600,
+    textFillColor: 'black',
+    fontSize: '30px'
+  });
+  heart.on('multi:pointerdown', function(e) {
+    x = this.attr('x');
+    y = this.attr('y');
+    heart.addTo(stage);
+  });
+
+  heart.on('multi:drag', function(e){
+    this.attr({
+      x: x + e.diffX,
+      y: y + e.diffY 
+    });
+  });
+  
+  r1s1.on('mouseover', function() {
+    this.fill('red');
+  });
+  r1s1.on('mouseout', function() {
+    this.fill('white');
+  });
+});
+
+
+//playing as the awl
+(awl.on('click', function() {
+  stage.removeChild(text);
+  stage.removeChild(heart);
+  text = new Text('Place your awl into any space').addTo(stage);
+  text.attr({
+    x: 180,
+    y: 600,
+    textFillColor: 'black',
+    fontSize: '30px'
+  });
+  awl.on('multi:pointerdown', function(e) {
+    x = this.attr('x');
+    y = this.attr('y');
+    awl.addTo(stage);
+  });
+
+  awl.on('multi:drag', function(e){
+    this.attr({
+      x: x + e.diffX,
+      y: y + e.diffY 
+    });
+    r1s1.on('mouseover', function() {
+      this.fill('blue');
+    });
+    r1s1.on('mouseout', function() {
+      this.fill('white');
+    });
+  });
+}));
