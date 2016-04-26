@@ -1,0 +1,13 @@
+var background = new Group().addTo(stage);
+new Rect(0, -50, 800, 900).fill("blue").addTo(background);
+new Rect(0, 650, 800, 200).fill("green").addTo(background);
+new Circle(150, 100, 75, 75).fill("yellow").addTo(background);
+
+var clouds = new Group().addTo(background);
+new Ellipse(400, 200, 100, 50).fill("white").addTo(clouds);
+new Ellipse(450, 250, 100, 50).fill("white").addTo(clouds);
+new Ellipse(475, 200, 75, 50).fill("white").addTo(clouds);
+new Ellipse(200, 500, 150, 50).fill("white").addTo(clouds);
+new Ellipse(375, 525, 125, 50).fill("white").addTo(clouds);
+new Ellipse(650, 400, 75, 50).fill("white").addTo(clouds);
+new Ellipse(700, 425, 75, 50).fill("white").addTo(clouds);
