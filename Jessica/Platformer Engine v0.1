@@ -1,0 +1,35 @@
+//Create the stage
+function background(stage) {
+  var scene = new Group().addTo(stage);
+    new Rect(0, -50, 800, 900).fill("#FFF4D9").addTo(scene);
+    new Rect(0, 650, 800, 200).fill("#91704A").addTo(scene);
+    new Rect(0, 650, 800, 25).fill("tan").addTo(scene);
+    
+    //Draws a painting(Removed, WIP?)
+    //new Rect(100, 75, 150, 200).fill("#573D00").addTo(scene);
+    //new Rect(115, 90, 120, 170).fill("#66F5FF").addTo(scene);
+    //new Rect(115, 180, 120, 80).fill("#87FF5E").addTo(scene);
+    //new Circle(140, 115, 20, 20).fill("#FFF563").addTo(scene);
+    
+    
+}
+background(stage);
+
+
+
+//Create the level's platforms
+var level = new Group().addTo(stage);
+    function platform(stage, x, y, width) {
+          new Rect(x, y, width, 30).fill("#573D00").addTo(stage);
+
+    }
+    platform(level, 200, 500, 180);
+    platform(level, 500, 300, 140);
+    
+var sprite = new Bitmap('https://raw.githubusercontent.com/GizmoGirlsWhoCode/JSGames2016/master/Jessica/orangecat.png').on('load', function() {
+  sprite.attr({
+  width: 200
+  });
+  
+  sprite.addTo(stage);
+});
